@@ -41,16 +41,93 @@
     padding: 0;
 }
 
-ol, ul {
+/* Geen punten bij lijst-items */
+ol,
+ul {
     list-style: none;
 }
 
 body {
     font-family: "Bariol", sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Header met mindmap categorie */
+header.mindmap {
+    /* Class mindmap in een Grid */
+    display: grid;
+    /* 3 kolommen, auto voor de h1 van de mindmap zodat hij niet meer ruimte neemt voor de inhoud */
+    grid-template-columns: 1fr auto 1fr;
+    /* Elementen verticaal centraal */
+    align-items: center;
+    /* Ruimte rondom de inhoud in de header */
+    padding: 1rem;
+    background-color: #172F3B;
+}
+
+/* Titel in de header */
+header h1 {
+    /* H1 komt in de middelste kolom van de grid */
+    grid-column: 2;
+    /* Alleen h1 horizontaal centraal in de middelste kolom */
+    justify-self: center;
+    color: #FFFFFF;
+    font-size: 1.8rem;
+}
+
+/* Filter-icoon aan de rechterkant van de header */
+header .filter-icon {
+    /* Filter-icoon in de rechter kolom van de grid */
+    grid-column: 3;
+    /* Schuift filter-icoon naar rechts */
+    justify-self: end;
+}
+
+svg {
+    fill: #FFFFFF;
+}
+
+/* Grid met 2 kolommen voor de foto's in de container */
+.photo-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    /* Ruimte rondom de foto's maar binnen de container */
+    padding: 10px;
+}
+
+/* Foto's in de grid laten passen en elke foto vierkant maken */
+.photo-container img {
+    /* Foto's even breed als de grid van photo-container */
+    width: 100%;
+    /* Maakt foto vierkant, hoogte = breedte */
+    aspect-ratio: 1 / 1;
+    /* Afgeronde hoeken */
+    border-radius: 10%;
+    /* Foto wordt bijgesneden zonder vervorming */
+    object-fit: cover;
+}
+
+/* Kleine schermen */
+@media (max-width: 350px) {
+    .photo-container {
+        grid-template-columns: 1fr;
+    }
+
+    .photo-container img {
+        width: 100%;
+        aspect-ratio: 1/1;
+        border-radius: 10%;
+    }
 }
 
 
 
+
+
+
 footer {
-display: none;
+    display: none;
 }
