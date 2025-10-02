@@ -35,7 +35,22 @@
     font-weight: 100;
 }
 
+/* CSS-reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ol, ul {
+    list-style: none;
+}
+
 body {
     font-family: "Bariol", sans-serif;
 }
 
+
+
+footer {
+display: none;
+}
