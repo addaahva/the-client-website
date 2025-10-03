@@ -122,6 +122,40 @@ header .filter-icon {
     }
 }
 
+/* Kleine Ipads en Tablets */
+@media (min-width: 550px) {
+    .photo-container {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .photo-container img {
+        width: 100%;
+        aspect-ratio: 1/1;
+        border-radius: 12%;
+    }
+}
+
+/* Grote Ipads en Tablets */
+@media (min-width: 700px) {
+    body {
+            grid-template-rows: auto 1fr auto;
+
+    }
+    .photo-container {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    .photo-container img {
+        width: 100%;
+        aspect-ratio: 1/1;
+        border-radius: 12%;
+    }
+
+    footer {
+
+    }
+}
+
 /* Nav onderaan vastzetten met grid en position: fixed */
 .nav-bar {
     /* Zit vast, de nav is altijd te zien */
