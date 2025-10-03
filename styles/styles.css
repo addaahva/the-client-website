@@ -42,20 +42,22 @@
 }
 
 /* Geen punten bij lijst-items */
-ol,
 ul {
     list-style: none;
 }
 
 body {
     font-family: "Bariol", sans-serif;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    /* Header, main en nav */
+    grid-template-rows: 1fr auto 1fr;
+    /* Het scherm wordt altijd gevuld (viewheight) */
     height: 100vh;
 }
 
 /* Header met mindmap categorie */
 header.mindmap {
+    grid-row: 1;
     /* Class mindmap in een Grid */
     display: grid;
     /* 3 kolommen, auto voor de h1 van de mindmap zodat hij niet meer ruimte neemt voor de inhoud */
@@ -85,12 +87,9 @@ header .filter-icon {
     justify-self: end;
 }
 
-svg {
-    fill: #FFFFFF;
-}
-
 /* Grid met 2 kolommen voor de foto's in de container */
 .photo-container {
+    grid-row: 2;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
@@ -123,11 +122,51 @@ svg {
     }
 }
 
+/* Nav onderaan vastzetten met grid en position: fixed */
+.nav-bar {
+    /* Zit vast, de nav is altijd te zien */
+    position: fixed;
+    /* Onderaan de pagina */
+    bottom: 0 ;
+    /* Nav altijd over de hele breedte */
+    width: 100%;
+    grid-row: 3;
+    background-color: #172F3B;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-items: center;
+    padding: 10px;
+    /* Blijft hierdoor voorop komen */
+    z-index: 1000;
+}
+
+.nav-bar ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    /* Nav-iconen ook altijd over de hele breedte */
+    width: 100%;
+    padding: 15px;
+}
+
+.nav-bar li {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.nav-bar li a {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
 
 
 
 
 
-footer {
+
+footer,
+.footer-list {
     display: none;
 }
