@@ -55,6 +55,18 @@ header .filter-icon {
     justify-self: end;
 }
 
+.mindmap-name img {
+    fill: white;
+    padding-right: 3%;
+}
+
+.mindmap-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3%;
+}
+
 /* Grid met 2 kolommen voor de foto's in de container */
 .photo-container {
     grid-row: 2;
@@ -78,6 +90,11 @@ header .filter-icon {
     @media (min-width: 700px) {
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
+
+    /* Desktop */
+        @media (min-width: 900px) {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
 }
 
 /* Foto's in de grid laten passen en elke foto vierkant maken */
@@ -89,6 +106,7 @@ header .filter-icon {
     /* Afgeronde hoeken */
     border-radius: 10%;
     /* Foto wordt bijgesneden zonder vervorming */
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     object-fit: cover;
 
     /* Kleine schermen */
@@ -113,6 +131,12 @@ header .filter-icon {
     }
 }
 
+.photo-container img:hover {
+    transform: rotate(2deg) scale(1.1);
+    transition: 0.3s ;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;    
+}
+
 /* Nav onderaan vastzetten met grid en position: fixed */
 .nav-bar {
     /* Zit vast, de nav is altijd te zien */
@@ -129,7 +153,12 @@ header .filter-icon {
     justify-items: center;
     padding: 10px;
     /* Blijft hierdoor voorop komen */
-    z-index: 1000;
+    z-index: 10;
+
+    /* Grote Ipads en Tablets */
+    @media (min-width: 700px) {
+    }
+
 }
 
 .nav-bar ul {
