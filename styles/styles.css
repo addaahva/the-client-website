@@ -88,6 +88,9 @@ header h1 {
             box-shadow: rgba(0 0 0 / 0.35) 0px 5px 15px;    
         }
     }
+
+    @media (min-width: 700px) {
+        padding-bottom: 5em;}
 }
 
 /* Nav */
@@ -134,7 +137,32 @@ header h1 {
     }   
 }
 
-footer,
-.footer-list {
+footer {
     display: none;
+
+    /* Grote Ipads en Tablets
+    @media (min-width: 700px) {
+        display: block;
+        translate: -0.4rem;
+        background-color: #172F3B;
+        padding: 2em;
+    }
+
+    .footer-list {
+        display: grid;
+        grid-template-columns:repeat(auto-fit, minmax(100px, 1fr));
+        justify-items: center;
+        gap: 1em;
+    }
+
+    .footer-list li:nth-child(n+3) {
+        padding-left: 7em;
+        padding-right: 2em;
+        gap: 2em;
+    }
+
+    .footer-list img {
+        width: 6em;
+        height: 6em;
+    } */
 }
